@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Talk to Mist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="Mistolt-logo.png" alt="" class="logo" />
+    <!-- <label class="switch" title="Enable assistant (visual)">
+      <input id="uiToggle" type="checkbox" checked />
+      <span class="slider"></span> -->
+    </label>
+  </header>
+
+  <main>
+    <img src="robot.png" alt="Mist Bot" class="robot" />
+    <h1 id="title">Talk to Mist</h1>
+
+    <div class="controls">
+      <button id="micBtn" class="mic-btn" aria-label="Start listening">
+        <span id="micIcon">🎤</span>
+      </button>
+    </div>
+
+    <div class="card transcript">
+      <div class="label">You said</div>
+      <div id="userText">—</div>
+    </div> 
+
+    <div class="card response">
+      <!-- <div class="label">Mist says</div> -->
+      <div id="botText">—</div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+</body>
+</html>

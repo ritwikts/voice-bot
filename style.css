@@ -1,0 +1,80 @@
+:root{
+    --bg:#0b0b0b;
+    --muted:#9aa0a6;
+    --accent:#1e88e5;
+    --card:#111214;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    height:100vh;
+    background:var(--bg);
+    color:#fff;
+    font-family:Inter, system-ui, Arial, sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  header{
+    position:fixed;
+    top:12px;
+    left:12px;
+    right:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    pointer-events:auto;
+    z-index:10;
+  }
+  .logo{height:34px}
+  .switch{position:relative; display:inline-block; width:50px; height:28px}
+  .switch input{display:none}
+  .slider{ position:absolute; inset:0; background:#2b2b2b; border-radius:999px; transition:.2s; box-shadow:0 1px 0 rgba(0,0,0,.6) inset; }
+  .slider:before{ content:""; position:absolute; left:4px; top:4px; width:20px; height:20px; background:#fff; border-radius:50%; transition:.2s; }
+  .switch input:checked + .slider{ background: var(--accent) }
+  .switch input:checked + .slider:before{ transform: translateX(22px) }
+  
+  main{
+    text-align:center;
+    width:100%;
+    max-width:420px;
+    padding:28px 18px;
+    pointer-events:none;
+  }
+  .robot{ width:120px; margin-top:60px; pointer-events:auto; }
+  h1{ margin:12px 0 8px; font-size:28px; letter-spacing:0.2px; pointer-events:auto }
+  .controls{ margin-top:6px; pointer-events:auto }
+  .mic-btn{
+    background:var(--accent);
+    border:none;
+    width:84px;
+    height:84px;
+    border-radius:999px;
+    display:inline-grid;
+    place-items:center;
+    font-size:34px;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 8px 24px rgba(30,136,229,.18);
+    transition:transform .12s ease, box-shadow .12s;
+  }
+  .mic-btn:active{ transform:scale(.98) }
+  .mic-btn.listening{ box-shadow:0 12px 30px rgba(30,136,229,.3); transform:scale(1.02); }
+  
+  .card{
+    background:var(--card);
+    margin:16px auto 8px;
+    padding:12px 14px;
+    border-radius:10px;
+    text-align:left;
+    max-width:420px;
+    pointer-events:auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,.5);
+  }
+  .label{ font-size:12px; color:var(--muted); margin-bottom:6px }
+  #userText, #botText{ font-size:15px; min-height:26px; color:#e6eef9; word-wrap:break-word }
+  @media (max-width:420px){
+    .robot{ width:100px }
+    .mic-btn{ width:72px; height:72px; font-size:28px }
+    h1{ font-size:22px }
+  }
